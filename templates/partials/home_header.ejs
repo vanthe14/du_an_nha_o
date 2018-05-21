@@ -48,7 +48,7 @@
                     <!-- Nav Start -->
                     <div class="classynav">
                         <ul>
-                            <li><a href="/">Home</a></li>
+                            <li><a href="/"><%= __("Home") %></a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
                                     <li><a href="/">Home</a></li>
@@ -121,7 +121,21 @@
 
                         <!-- Search Button -->
                         <a href="#" class="searchbtn"><i class="fa" aria-hidden="true"></i></a>
+                        <ul>
+                            <img src="/img/flags/<%=  clanguage %>.png" alt="<%=  __(clanguage) %>" title="<%=  __(clanguage) %>">
+                            <li><a href="#"><%=  __(clanguage) %></a>
+                                <ul class="dropdown">
+                                    <% languages.forEach(function(language){ %>
+                                        <a class="dropdown-item" href="/change-lang/<%= user %>"><%=  __(language) %></a>
+                               
+                                    <% })%    
+                                </ul>
+                            </li>
+                        </ul>
+                            
+                   
                     </div>
+                    
                     <!-- Nav End -->
                 </div>
             </nav>

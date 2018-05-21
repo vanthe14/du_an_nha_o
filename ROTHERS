@@ -1,0 +1,1 @@
+app.set('view options', {defaultLayout: 'layout-1'});

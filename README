@@ -1,4 +1,4 @@
 - cài đặt express
 - cài đặt mongoose
 - cài đặt template ejs, ejs-locals, express-ejs-layouts
-- cài đặt cookie-parser, body-parser
+- cài đặt cookie-parser, body-parser, i18n
