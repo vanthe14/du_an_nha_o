@@ -2,3 +2,15 @@
 - cài đặt mongoose
 - cài đặt template ejs, ejs-locals, express-ejs-layouts
 - cài đặt cookie-parser, body-parser, i18n
+
+ <ul>
+                            <img src="/img/flags/<%=  clanguage %>.png" alt="<%=  __(clanguage) %>" title="<%=  __(clanguage) %>">
+                            <li><a href="#"><%=  __(clanguage) %></a>
+                                <ul class="dropdown">
+                                    <% languages.forEach(function(language){ %>
+                                        <a class="dropdown-item" href="/change-lang/<%= language %>"><%=  __(language) %></a>
+                               
+                                    <% })%    
+                                </ul>
+                            </li>
+                        </ul>

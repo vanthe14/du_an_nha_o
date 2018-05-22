@@ -48,7 +48,7 @@
                     <!-- Nav Start -->
                     <div class="classynav">
                         <ul>
-                            <li><a href="/"><%= __("Home") %></a></li>
+                            <li><a href="/"><%=  __('Home') %></a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
                                     <li><a href="/">Home</a></li>
@@ -121,25 +121,26 @@
 
                         <!-- Search Button -->
                         <a href="#" class="searchbtn"><i class="fa" aria-hidden="true"></i></a>
-                        <!-- <ul>
-                            <img src="/img/flags/<%=  clanguage %>.png" alt="<%=  __(clanguage) %>" title="<%=  __(clanguage) %>">
+                       
+                        <ul>
+                            <img src="/img/flags/<%=  (clanguage) %>.png" alt="<%=  __(clanguage) %>" title="<%=  __(clanguage) %>">
                             <li><a href="#"><%=  __(clanguage) %></a>
                                 <ul class="dropdown">
-                                    <% languages.forEach(function(language){ %>
-                                        <a class="dropdown-item" href="/change-lang/<%= language %>"><%=  __(language) %></a>
-                               
-                                    <% })%    
+                                    <% languages.forEach(function(lang){ %>
+                                        <li><a class="dropdown-item" href="/change-lang/<%= lang %>"><%=  __(lang) %></a></li>
+                                         
+                                    <% })%>                                                                
                                 </ul>
                             </li>
-                        </ul> -->
                             
-                   
+                        </ul>
                     </div>
-                    
+                
                     <!-- Nav End -->
                 </div>
             </nav>
         </div>
     </div>
 </header>
+
 <!-- ##### Header Area End ##### -->

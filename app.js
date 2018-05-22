@@ -59,10 +59,11 @@ app.use(function(req, res, next){
     res.locals.languages = i18n.getLocales();
     next();
 })
+
 app.use("/change-lang/:lang", (req, res) => { 
     res.cookie('language', req.params.lang, { maxAge: 900000 });
     res.redirect('back');
-   // console.log("hear")
+    //console.log("hear"+i18n.getLocales())
 });
 
 // Use Router Frontend
