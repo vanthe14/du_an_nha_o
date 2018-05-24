@@ -78,6 +78,7 @@ app.use(passport.session());
 app.use(function(req, res, next){
     res.locals.clanguage = req.getLocale();
     res.locals.languages = i18n.getLocales();
+   
     next();
 })
 app.use("/change-lang/:lang", (req, res) => { 
