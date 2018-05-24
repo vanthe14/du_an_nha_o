@@ -22,8 +22,8 @@ var member_Router = require('./routers/router_users/router_member')
 
 var app = express();
 
-//Connection database
 mongoose.connect(configDB.conectionString);
+
 mongoose.connection.on('error', function(err) {
     console.log('Lỗi kết nối đến CSDL: ' + err);
 });
