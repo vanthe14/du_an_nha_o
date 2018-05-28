@@ -29,7 +29,7 @@ var app = express();
 var conn = mysql.createConnection({
     host    : 'localhost',
     user    : 'root',
-    password: 'Admin12345',
+    password: 'admin',
     database: 'world'
 });
 //kết nối.
