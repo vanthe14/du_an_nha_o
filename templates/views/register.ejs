@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container" style="padding-top: 180px">
+  <h2>Form control: input</h2>
+  <p>The form below contains two input elements; one of type text and one of type password:</p>
+  <form action="/thanh-vien/dang-ky" method="POST">
+    <% if(hasErrors) { %>
+        <div class="alert alert-danger">
+            <% messages.forEach(function(message){ %>
+                    <a href=""><%=  message %></a>
+                     
+            <% })%>    
+        </div>
+    <% } %>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-sm-6">
+                <label for="firstname">FirstName:</label>
+                <input type="text" class="form-control" id="firstname" name="firstname" placeholder="<%=__('Input your firstname')%>">
+            </div>
+            <div class="col-sm-6">
+                    <label for="lastname">LastName:</label>
+                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="<%=__('Input your last name')%>">
+            </div>
+        </div>    
+    </div>
+    <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" class="form-control" id="email" name="email" placeholder="<%=__('Input your last name')%>">
+          </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" class="form-control" id="password" name="password">
+    </div>
+    <div class="form-group">
+            <label for="confirmpassword">Confirm Password:</label>
+            <input type="confirmpassword" class="form-control" id="confirmpassword" name="confirmpassword">
+          </div>
+
+    <input type="hidden" name="_csrf" value="<%=csrfToken %>" />
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+  </form>
+
+</div>
+
+</body>
+</html>

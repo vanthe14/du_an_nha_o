@@ -5,10 +5,12 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var i18n = require('i18n')
 var mongoose = require("mongoose");
+var mysql = require('mysql');
 var session = require('express-session');
 var passport = require('passport');
 var flash = require('connect-flash');
 var validator = require('express-validator');
+
 
 // in the requirements section
 var ejsLayouts = require("express-ejs-layouts");
@@ -22,11 +24,28 @@ var member_Router = require('./routers/router_users/router_member')
 
 var app = express();
 
-mongoose.connect(configDB.conectionString);
 
-mongoose.connection.on('error', function(err) {
-    console.log('Lỗi kết nối đến CSDL: ' + err);
+
+var conn = mysql.createConnection({
+    host    : 'localhost',
+    user    : 'root',
+    password: 'Admin12345',
+    database: 'world'
 });
+//kết nối.
+conn.connect(function (err){
+    //nếu có nỗi thì in ra
+    if (err) throw err.stack;
+    //nếu thành công
+    console.log('ket noi thanh cong');
+    
+});
+
+// mongoose.connect(configDB.conectionString);
+
+// mongoose.connection.on('error', function(err) {
+//     console.log('Lỗi kết nối đến CSDL: ' + err);
+// });
 require('./configs/passport');
 //require('configs/passport');
 
